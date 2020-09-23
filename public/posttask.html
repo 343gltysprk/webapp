@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <title>Post task</title>
+
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+        <link rel="stylesheet" href="/stylesheets/generalstyle.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="/javascripts/task3.js" defer></script>
+
+
+    </head>
+
+    <body onload="get_user_list()">
+        <div id="vuemain" v-bind:class="{ night: nightmode }">
+
+        <header>
+            <button  class="pure-button" style="float:right" onclick="logout()">Log out</button>
+            <h1>Welcome to the Online Task Manager!</h1>
+            <nav class="pure-menu pure-menu-horizontal">
+                <ul id="topmenu" class="pure-menu-list">
+                <li class="pure-menu-item" v-for="item in topmenu" :key="item.title"><a v-bind:href="item.url" class="pure-menu-link">{{item.title}}</a></li>
+                </ul>
+                <div class="pure-menu">
+                    <ul id="submenu" class="pure-menu-list">
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+          <div class="container" style="position: relative;float:left;">
+              <h2>Post task</h2>
+
+            </div>
+
+
+        <div id="main" class="container">
+            <br>
+            <div class="pure-form pure-form-aligned">
+                <fieldset>
+                    <div class="pure-control-group">
+                        <label for="postTitle">Title</label>
+                        <input id="postTitle" type="text" placeholder="Title">
+                    </div>
+
+                    <div class="pure-control-group">
+                        <label for="due">Due</label>
+                        <input type="datetime-local" id="due" value="2020-06-12T19:30"
+                        min="2020-01-01T00:00" max="2030-01-11T00:00">
+
+                        <label for="worktype">Choose task type:</label>
+                        <select id="worktype" name="type" onchange="select_user()">
+                            <option value="html">html</option>
+                            <option value="js">js</option>
+                            <option value="sql">sql</option>
+                        </select>
+                    </div>
+
+                    <div class="pure-control-group">
+                        <label>People:</label>
+                        <span id="people_work_on_it" ></span>
+                    </div>
+
+                    <div class="pure-control-group">
+                        <label for="postBody">Content</label>
+                        <textarea id="postBody" rows="20" style="width: 60%;" placeholder="Write your post here"></textarea>
+                    </div>
+
+                    <div class="pure-controls">
+                        <button class="pure-button pure-button-primary" onclick="submitPost();">Submit</button>
+                    </div>
+                </fieldset>
+            </div>
+
+
+
+        </div>
+
+     </div>
+        <footer><p>By Zizhao Li</p></footer>
+
+
+
+    </body>
+
+</html>
+
+

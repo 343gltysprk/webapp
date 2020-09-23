@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <title>Online TaskManager</title>
+
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+        <link rel="stylesheet" href="/stylesheets/generalstyle.css">
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="/javascripts/task1.js" defer></script>
+
+
+    </head>
+
+    <body>
+
+        <div id="vuemain" v-bind:class="{ night: nightmode }">
+
+
+        <header>
+            <button  class="pure-button" style="float:right" onclick="logout()">Log out</button>
+            <h1>Dashboard</h1>
+            <nav class="pure-menu pure-menu-horizontal">
+                <ul id="topmenu" class="pure-menu-list">
+                <li class="pure-menu-item" v-for="item in topmenu" :key="item.title"><a v-bind:href="item.url" class="pure-menu-link">{{item.title}}</a></li>
+                </ul>
+                <div class="pure-menu">
+                    <ul id="submenu" class="pure-menu-list">
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+          <div class="container" id="tt" style="position: relative;float:left;">
+              <h2>Dashboard</h2>
+
+            </div>
+
+
+
+        <div id="main" class="container">
+
+            <div style="float:right; margin: 1em; border-left: 1px solid #111111;min-height: 900px;">
+
+
+                <h2><i>Completed:</i></h2>
+                <hr />
+                    <div v-for="item in tlink" :key="item.id">
+                    <a v-bind:id="item.id" onclick="showdone(id)" href="#">
+                        {{item.title}}
+                    </a>
+                    </div>
+            </div>
+
+            <div id="items">
+                <button class="pure-button" onclick="s();">Refresh tasks</button>
+            </div>
+         <div  class="taskbox">
+             <hr />
+             <h3>To Do</h3>
+             <div>
+                    <div class="taskCard" v-for="item in tcard" :key="item.id">
+                        <h2>{{item.title}}</h2>
+                        <p>Due:{{item.dueday}}</p>
+                        <p>People:{{item.people}}</p>
+                        <b><button v-bind:id="item.id" onclick="showtask(id)">Handle it!</button></b>
+                    </div>
+            </div>
+        </div>
+
+
+
+        </div>
+        <div id="taskcontent" style="display:none; min-height:500px;">
+        <button class="pure-button" style="float:right" onclick="back()">Back</button>
+        <h1>Task</h1>
+        <hr>
+        <h1 id="t1"></h1>
+        <p id="t2"></p>
+        <p id="ttype"></p>
+        <p><b>Description:</b></p>
+        <hr>
+        <article id="t3">
+        </article>
+        <div id="to_do_only">
+        <button class="pure-button" style="float:right" onclick="complete()">Complete the task!</button>
+        </div>
+        </div>
+        </div>
+
+
+        <footer><p>By Zizhao Li</p></footer>
+
+
+
+    </body>
+
+</html>

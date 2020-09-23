@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <title>user setting</title>
+        <link rel="stylesheet" href="/stylesheets/generalstyle.css">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="/javascripts/task2.js" defer></script>
+
+
+    </head>
+
+    <body  onload="get_user_info();">
+        <div id="vuemain" v-bind:class="{ night: nightmode }">
+
+        <header>
+            <button  class="pure-button" style="float:right" onclick="logout()">Log out</button>
+            <h1>Welcome to the Online Task Manager!</h1>
+            <nav class="pure-menu pure-menu-horizontal">
+                <ul id="topmenu" class="pure-menu-list">
+                <li class="pure-menu-item" v-for="item in topmenu" :key="item.title"><a v-bind:href="item.url" class="pure-menu-link">{{item.title}}</a></li>
+                </ul>
+                <div class="pure-menu">
+                    <ul id="submenu" class="pure-menu-list">
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+          <div class="container" style="position: relative;float:left;">
+              <h2>User setting</h2>
+
+            </div>
+
+
+        <div id="main" class="container">
+
+            <div style="float:right; margin: 1em; border-left: 1px solid #111111;min-width: 400px;min-height:650px;">
+
+
+                <h2><i>Email Setting</i></h2>
+                <hr />
+                <p>Your Email is:<span id="e3">void</span></p>
+                <p>Once a task is posted, you will receive an email</p>
+                <button class="pure-button" style="float:right" onclick="test()">Send a test email</button>
+            </div>
+         <div  class="taskbox">
+             <hr />
+
+
+             <div id="info" style="display:block;">
+                 <button class="pure-button" style="float:right" onclick="edit()">Edit</button>
+                 <h2>Profile</h2>
+             <p>User name:<span id="u1">void</span></p>
+             <p>Email:<span id="e1">void</span></p>
+             <p>Phone:<span id="p1">void</span></p>
+             <p>Preference:<span  id="pre1">void</span></p>
+             <p>Availability:<span id="a1">void</span></p>
+            </div>
+
+
+         <div style="display:none" id="edit_info">
+             <button class="pure-button" style="float:right" onclick="edit_cancel()">Back</button>
+             <form action="/edit_info" method="post">
+             <h2>Edit Profile</h2>
+            <p>Username:</p>
+            <p id="uname" ></p><br>
+            <label for="e2">Email</label><br>
+            <input id="e2" type="text" name="email" placeholder="Email"><br>
+            <label for="p2">Phone</label><br>
+            <input id="p2" type="text" name="phone" placeholder="Phone"><br>
+
+            <p>Work Preference:</p>
+            <input type="radio" id="type1" name="type" value="html">
+            <label for="type1">html</label><br>
+            <input type="radio" id="type2" name="type" value="js">
+            <label for="type2">js</label><br>
+            <input type="radio" id="type3" name="type" value="sql">
+            <label for="type3">sql</label><br>
+
+            <p>Availability:</p>
+            <input type="radio" id="true" name="yesno" value="true">
+            <label for="type1">true</label><br>
+            <input type="radio" id="false" name="yesno" value="false">
+            <label for="type2">false</label><br>
+
+
+
+
+            <input type="submit" value="Submit">
+            </form>
+         </div>
+
+        </div>
+        </div>
+
+     </div>
+        <footer><p>By Zizhao Li</p></footer>
+
+
+
+    </body>
+
+</html>
+
+

@@ -1,0 +1,89 @@
+
+            body,#vuemain {
+                padding: 0;
+                margin: 0;
+                /*color: #111111;*/
+            }
+
+            div, header {
+                padding: 1em;
+            }
+
+            nav .pure-menu-link {
+                color: #eeeeee;
+            }
+
+            nav .pure-menu-link:hover {
+                color: RGB(67, 8, 168);
+            }
+
+            header,footer {
+                border-bottom: 1px solid #444444;
+                max-height:120px;
+                background-color: RGB(67, 8, 168);
+                color: #eeeeee;
+            }
+
+            footer {
+                border-top: 1px solid #444444;
+                background-color: RGB(67, 8, 168);
+                color: #eeeeee;
+                text-align: center;
+                clear: both;
+            }
+
+            #ad img {
+                width: 24em;
+            }
+
+            #ad h2 {
+                text-align: center;
+            }
+
+            #stores img {
+                width: 6em;
+                float: right;
+            }
+
+
+            #items {
+                float: right;
+                margin-right: 1em;
+            }
+
+            #items img {
+                width: 12em;
+                float: right;
+                margin-right: 1em;
+            }
+
+            .taskbox {
+                margin-top:70px;
+            }
+
+            .night {
+                background-color: #111111;
+                color: #eeeeee;
+            }
+
+            .taskCard {
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            border-radius: 4px;
+            overflow: hidden;
+            background: orange;
+            width: 262px;
+            display: inline-block;
+            vertical-align: top;
+            margin: 0 36px 36px 0;
+            }
+            .taskCard button {
+             border: none;
+             outline: 0;
+             padding: 12px;
+             color: white;
+             background-color: #000;
+             text-align: center;
+             cursor: pointer;
+             width: 100%;
+             font-size: 18px;
+            }

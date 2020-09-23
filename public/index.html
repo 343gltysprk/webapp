@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+	    <title>Task Manager</title>
+
+
+        <link type="text/css" rel="stylesheet" href="/stylesheets/login.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="/javascripts/login.js" defer></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <meta name="google-signin-client_id" content="63312847304-n405ndtf6cpb7j5iatlam0ha59006aqo.apps.googleusercontent.com">
+	</head>
+	<body id="cas" onload="signOut();">
+            <div id="header" class="header clearfix">
+              <div id="header-topbar" class="clearfix">
+
+              </div>
+              <div id="header-branding" class="branding prefix_q0 clearfix">
+                <h1 class="branding-title">Task Manager</h1>
+              </div>
+              <div id="header-menu"></div>
+            </div>
+            <div id="content">
+
+<div id="loginandhelp" class="clearfix">
+  <div id="login" class="box fl-panel">
+      <div id="legend"><span><span class="curl"></span>Log in</span></div>
+			<div id="fm1" class="fm-v clearfix">
+
+                    <div class="row fl-controls-left">
+                        <label for="username" class="fl-label">Username:</label>
+
+
+
+
+						<input id="username" name="username" class="required" tabindex="1" placeholder="e.g. Zizaho Li" accesskey="n" type="text" value="" size="25">
+
+                    </div>
+                    <div class="row fl-controls-left">
+                        <label for="password" class="fl-label">Password:</label>
+
+
+						<input id="password" name="password" class="required" tabindex="2" accesskey="p" type="password" value="" size="25" autocomplete="off">
+                    </div>
+                    <div class="row btn-row">
+
+
+                        <button class="pure-button" onclick="login()">Login</button><br />
+
+                    </div>
+      </div>
+            <div id="login-important-note">
+              <p class="fl-panel fl-note fl-bevel-white fl-font-size-80">Don't have an account? <a href="#" style="color:blue" onclick=signup();>Sign up</a></p>
+            </div>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+
+          </div>
+            <div class="signup" style="display:none" id="fm11">
+             <button class="pure-button" style="float:right" onclick="edit_cancel()">Back</button>
+             <div style="position: relative;">
+             <h2>Edit Profile</h2>
+            <label for="u2">Username</label><br>
+            <input id="u2" type="text" name="username" placeholder="Username"  size="50"><br>
+            <label for="e2">Email</label><br>
+            <input id="e2" type="text" name="email" placeholder="Email"  size="50"><br>
+            <label for="p2">Phone</label><br>
+            <input id="p2" type="text" name="phone" placeholder="Phone"  size="50"><br>
+            <label for="pass1">Password</label><br>
+            <input id="pass1" type="password" name="newpass" placeholder="Password"  size="50"><br>
+                        <label for="role">Sign up as:</label>
+            <select id="role" name="Character" onchange="select_user()">
+                    <option value=0>User</option>
+                    <option value=1>Manager</option>
+            </select><br>
+            <button class="pure-button" onclick="sign()">Sign up</button>
+            </div>
+         </div>
+
+         </div>
+</div>
+
+
+
+
+
+</body>
+</html>
